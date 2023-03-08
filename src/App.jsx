@@ -7,11 +7,10 @@ import Navbar from './components/Navbar';
 function App() {
 
   return (
-<div>
-   <h1>BigSneakers</h1>
-    <Navbar />
-    <ItemListContainer greeting="" />
-</div>
+    <div>
+      <Navbar />
+      <ItemListContainer greeting="BigSneakers"/>
+    </div>
 
   );
 }

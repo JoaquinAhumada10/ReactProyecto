@@ -1,10 +1,8 @@
 import styles from "./itemlist.module.css";
 
-const ItemListContainer = () => {
-  return <div className={styles.container}>
-  <p>Hola Mundo</p>
-   </div>
-  
+const ItemListContainer = ({ greeting }) => {
+  return ( <h2 className={styles.container}>{greeting}</h2>
+  );
 }
 
-export default ItemListContainer
+export default ItemListContainer;

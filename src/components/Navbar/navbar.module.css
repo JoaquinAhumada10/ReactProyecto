@@ -3,7 +3,9 @@
    justify-content: space-between; 
    background-color: rgb(160, 160, 160);
 }
-
+h1{
+  color: crimson;
+}
 nav {
    background-color: #333;
    overflow: hidden;
