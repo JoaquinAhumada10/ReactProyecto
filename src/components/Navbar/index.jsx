@@ -1,22 +1,76 @@
-import CartWidget from "../CartWidget";
-import styles from "./navbar.module.css";
-
+import { NavLink } from 'react-router-dom';
+import styles from './navbar.module.css';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
-  return( 
+	let activeStyle = {
+		color: 'red',
+		textDecoration: 'none',
+	};
+	let noActiveStyle = {
+		textDecoration: 'none',
+	};
+	return (
+		<nav className={styles.container}>
+			<NavLink
+				to="/"
+				style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+			>
+				<h1>BigsSneakers</h1>
+			</NavLink>
 
-  <nav className={styles.container}>
-    <h1>BigsSneakers</h1>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Sobre nosotros</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-    <CartWidget cartItemsCount={3}/>
-  </nav>
-  
-  );
-}
+			<ul>
+				<li>
+					<NavLink
+						to="/inicio"
+						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+					>
+						<p>Inicio</p>
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
+						to="/productos"
+						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+					>
+						<p> Productos</p>
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
+						to="/categorias"
+						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+					>
+						<p> Categorias</p>
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
+						to="/Sobrenosotros"
+						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+					>
+						<p>Sobre nosotros</p>
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
+						to="/contacto"
+						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+					>
+						<p> Contacto</p>
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
+						to="/cart"
+						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+					>
+						<FaShoppingCart />
+					</NavLink>
+				</li>
+			</ul>
+		</nav>
+	);
+};
 
-export default Navbar
+export default Navbar;
