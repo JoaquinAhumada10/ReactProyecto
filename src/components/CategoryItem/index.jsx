@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Card from '../Card';
 
-const CategoryList = () => {
+const CategoryItem = () => {
 	const [category, setCategory] = useState();
 	const [products, setProducts] = useState([]);
 
@@ -49,4 +49,4 @@ const CategoryList = () => {
 	);
 };
 
-export default CategoryList;
+export default CategoryItem;

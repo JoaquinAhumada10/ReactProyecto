@@ -5,7 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProductList from './components/ProductList';
 import ProductItem from './components/ProductItem';
-import CategoryList from './components/CategoryList';
+
+import CategoryItem from './components/CategoryItem';
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -32,7 +33,7 @@ function App() {
 				<Route path="/productos/:id" element={<ProductItem />} />
 				<Route
 					path="/categorias"
-					element={<CategoryList products={products} />}
+					element={<CategoryItem products={products} />}
 				/>
 				<Route path="/categorias/:id" element={<ProductItem />} />
 				<Route path="/contacto" element={<h3>Contactanos</h3>} />

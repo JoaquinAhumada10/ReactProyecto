@@ -10,7 +10,7 @@ const ProductItem = () => {
 		fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
 			.then((res) => res.json())
 			.then((data) => setProduct(data));
-	}, [id]);
+	}, []);
 
 	return (
 		<div className={`${styles.container}`}>
