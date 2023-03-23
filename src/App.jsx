@@ -1,12 +1,9 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/ItemDetailContainer';
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductList from './components/ProductList';
-import ProductItem from './components/ProductItem';
-
-import CategoryItem from './components/CategoryItem';
+import ItemDetailContainer from './components/ItemListContainer';
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -21,23 +18,19 @@ function App() {
 		<div>
 			<Navbar />
 			<Routes>
-				<Route
-					path="/"
-					element={<ItemListContainer greeting="BigSneakers" />}
-				/>
-				<Route path="/inicio" element={<h3> Bienvenido a nuestro sitio </h3>} />
+				<Route path="/" element={<ItemListContainer products={products} />} />
+
 				<Route
 					path="/productos"
-					element={<ProductList products={products} />}
+					element={<ItemListContainer products={products} />}
 				/>
-				<Route path="/productos/:id" element={<ProductItem />} />
+				<Route path="/productos/:id" element={<ItemDetailContainer />} />
 				<Route
 					path="/categorias"
-					element={<CategoryItem products={products} />}
+					element={<ItemListContainer products={products} />}
 				/>
-				<Route path="/categorias/:id" element={<ProductItem />} />
-				<Route path="/contacto" element={<h3>Contactanos</h3>} />
-				<Route path="/Sobrenosotros" element={<h4>SobreNosotros</h4>} />
+				<Route path="/categorias/:id" element={<ItemDetailContainer />} />
+
 				<Route path="/cart" />
 			</Routes>
 		</div>

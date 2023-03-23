@@ -41,25 +41,34 @@ const Navbar = () => {
 						to="/categorias"
 						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
 					>
-						<p> Categorias</p>
+						<p>Clothes</p>
 					</NavLink>
 				</li>
 				<li>
 					<NavLink
-						to="/Sobrenosotros"
+						to="/categorias"
 						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
 					>
-						<p>Sobre nosotros</p>
+						<p>Electronics</p>
 					</NavLink>
 				</li>
 				<li>
 					<NavLink
-						to="/contacto"
+						to="/categorias"
 						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
 					>
-						<p> Contacto</p>
+						<p>Furniture</p>
 					</NavLink>
 				</li>
+				<li>
+					<NavLink
+						to="/categorias"
+						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+					>
+						<p>Shoes</p>
+					</NavLink>
+				</li>
+
 				<li>
 					<NavLink
 						to="/cart"

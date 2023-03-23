@@ -1,6 +1,6 @@
 import Card from '../Card';
 
-const ProductList = ({ products }) => {
+const ItemDetailContainer = ({ products }) => {
 	return (
 		<div>
 			{products.map((product) => (
@@ -10,4 +10,4 @@ const ProductList = ({ products }) => {
 	);
 };
 
-export default ProductList;
+export default ItemDetailContainer;
