@@ -19,19 +19,30 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<ItemListContainer products={products} />} />
-
+				<Route path="/inicio" />
 				<Route
 					path="/productos"
 					element={<ItemListContainer products={products} />}
 				/>
 				<Route path="/productos/:id" element={<ItemDetailContainer />} />
+
 				<Route
-					path="/categorias"
+					path="/categorias/clothes"
 					element={<ItemListContainer products={products} />}
 				/>
-				<Route path="/categorias/:id" element={<ItemDetailContainer />} />
+				<Route
+					path="/categorias/shoes"
+					element={<ItemListContainer products={products} />}
+				/>
+				<Route
+					path="/categorias/:category/:id"
+					element={<ItemDetailContainer />}
+				/>
+				<Route path="/categorias/:id" element={<ItemListContainer />} />
 
 				<Route path="/cart" />
+
+				<Route path="/:id" element={<ItemDetailContainer />} />
 			</Routes>
 		</div>
 	);

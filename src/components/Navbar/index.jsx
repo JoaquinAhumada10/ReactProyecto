@@ -38,31 +38,16 @@ const Navbar = () => {
 				</li>
 				<li>
 					<NavLink
-						to="/categorias"
+						to="/categorias/clothes"
 						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
 					>
 						<p>Clothes</p>
 					</NavLink>
 				</li>
+
 				<li>
 					<NavLink
-						to="/categorias"
-						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
-					>
-						<p>Electronics</p>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/categorias"
-						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
-					>
-						<p>Furniture</p>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/categorias"
+						to="/categorias/shoes"
 						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
 					>
 						<p>Shoes</p>
