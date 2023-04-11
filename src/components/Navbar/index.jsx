@@ -4,7 +4,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
 	let activeStyle = {
-		color: 'red',
+		color: 'blue',
 		textDecoration: 'none',
 	};
 	let noActiveStyle = {
@@ -38,19 +38,10 @@ const Navbar = () => {
 				</li>
 				<li>
 					<NavLink
-						to="/categorias/clothes"
+						to="/categorias"
 						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
 					>
-						<p>Clothes</p>
-					</NavLink>
-				</li>
-
-				<li>
-					<NavLink
-						to="/categorias/shoes"
-						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
-					>
-						<p>Shoes</p>
+						<p>Categorias</p>
 					</NavLink>
 				</li>
 

@@ -1,10 +1,10 @@
 import Card from '../Card';
 
-const ItemDetailContainer = ({ products }) => {
+const ItemDetailContainer = ({ items }) => {
 	return (
 		<div>
-			{products.map((product) => (
-				<Card key={product.id} product={product} />
+			{items.map((item) => (
+				<Card key={item.id} item={item} />
 			))}
 		</div>
 	);
