@@ -1,0 +1,43 @@
+.cart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.total {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.form-label {
+	font-weight: bold;
+}
+
+.form-input {
+	border: 1px solid #ccc;
+	padding: 0.5rem;
+	border-radius: 4px;
+}
+
+.form-button {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.form-button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}

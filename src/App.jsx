@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemDetailContainer';
 import { Route, Routes } from 'react-router-dom';
@@ -7,6 +8,8 @@ import ItemDetailContainer from './components/ItemListContainer';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../db/firebase-config';
 import CategoryList from './components/CategoryList';
+import CartProvider from './components/context/CartContext';
+import Cart from './components/Cart';
 
 function App() {
 	const [items, setItems] = useState([]);
@@ -24,26 +27,27 @@ function App() {
 	useEffect(() => {
 		getItems();
 	}, []);
-	console.log(items);
 
 	return (
 		<div>
-			<Navbar />
-			<Routes>
-				<Route path="/" element={<ItemListContainer items={items} />} />
-				<Route path="/inicio" />
-				<Route
-					path="/productos"
-					element={<ItemListContainer items={items} />}
-				/>
-				<Route path="/productos/:id" element={<ItemDetailContainer />} />
-				<Route path="/categorias" element={<CategoryList items={items} />} />
-				<Route path="/categorias/:id" element={<ItemDetailContainer />} />
+			<CartProvider>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<ItemListContainer items={items} />} />
+					<Route path="/inicio" />
+					<Route
+						path="/productos"
+						element={<ItemListContainer items={items} />}
+					/>
+					<Route path="/productos/:id" element={<ItemDetailContainer />} />
+					<Route path="/categorias" element={<CategoryList items={items} />} />
+					<Route path="/categorias/:id" element={<ItemDetailContainer />} />
 
-				<Route path="/cart" />
+					<Route path="/cart" element={<Cart />} />
 
-				<Route path="/:id" element={<ItemDetailContainer />} />
-			</Routes>
+					<Route path="/:id" element={<ItemDetailContainer />} />
+				</Routes>
+			</CartProvider>
 		</div>
 	);
 }

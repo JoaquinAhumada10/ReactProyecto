@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './navbar.module.css';
-import { FaShoppingCart } from 'react-icons/fa';
+import CartWidget from '../CartWidget';
 
 const Navbar = () => {
 	let activeStyle = {
@@ -22,7 +22,7 @@ const Navbar = () => {
 			<ul>
 				<li>
 					<NavLink
-						to="/inicio"
+						to="/"
 						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
 					>
 						<p>Inicio</p>
@@ -46,11 +46,8 @@ const Navbar = () => {
 				</li>
 
 				<li>
-					<NavLink
-						to="/cart"
-						style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
-					>
-						<FaShoppingCart />
+					<NavLink to="/cart">
+						<CartWidget />
 					</NavLink>
 				</li>
 			</ul>
